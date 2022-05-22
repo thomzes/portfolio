@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +27,11 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
+Route::group(['prefix'=> 'admin', 'middleware'=> ['admin:admin']], function() {
+    Route::get('/login', [AdminController::class, 'loginForm']);
+});
+
+
+
