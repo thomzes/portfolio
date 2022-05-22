@@ -18,20 +18,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
-
-
 Route::group(['prefix'=> 'admin', 'middleware'=> ['admin:admin']], function() {
     Route::get('/login', [AdminController::class, 'loginForm']);
+    Route::post('login', [AdminController::class, 'store'])->name('admin.login');
 });
+
+
+
+Route::middleware(['auth:admin'])->group(function () {
+
+    // Admin middleware
+    Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', function () {
+        return view('admin.index');
+    })->name('dashboard')->middleware('auth:admin');
+});
+
+Route::get('/admin/logout', [AdminController::class, 'destroy'])->name('admin.logout');
+
+
+
+
 
 
 
