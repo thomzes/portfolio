@@ -18,7 +18,7 @@ class ProfileController extends Controller
 
     public function ProfileStore(Request $request)
     {
-        
+        return view('backend.profile.profile_add');
 
 
 

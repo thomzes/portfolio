@@ -43,6 +43,7 @@ Route::get('/admin/logout', [AdminController::class, 'destroy'])->name('admin.lo
 
 Route::prefix('profile')->group(function() {
     Route::get('/view', [ProfileController::class, 'ProfileView'])->name('profile.view');
+    Route::get('/store', [ProfileController::class, 'ProfileStore'])->name('profile.store');
 });
 
 
