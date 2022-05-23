@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,7 +34,16 @@ Route::middleware(['auth:admin'])->group(function () {
     })->name('dashboard')->middleware('auth:admin');
 });
 
+
+// Admin All Routes
 Route::get('/admin/logout', [AdminController::class, 'destroy'])->name('admin.logout');
+
+
+
+
+Route::prefix('profile')->group(function() {
+    Route::get('/view', [ProfileController::class, 'ProfileView'])->name('profile.view');
+});
 
 
 
