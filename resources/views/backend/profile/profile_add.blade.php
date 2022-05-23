@@ -10,7 +10,9 @@
     </div>
     <div class="card-body">
 
-        <form>
+        <form method="POST" action="{{ route('profile.store') }}" enctype="multipart/form-data">
+            @csrf
+
             <div class="form-group">
               <label for="name">Name</label><span class="text-danger">*</span>
               <input type="text" class="form-control" id="name" name="name" placeholder="Enter Full Name..." required>
@@ -38,14 +40,6 @@
 
     </div>
 </div>
-
-
-
-
-
-
-
-
 
 
 @endsection
