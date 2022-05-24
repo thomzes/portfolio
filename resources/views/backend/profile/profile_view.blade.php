@@ -31,10 +31,10 @@
                         <td>{{ $item->status }}</td>
                         <td>{{ $item->job }}</td>
                         <td>{{ $item->description }}</td>
-                        <td>{{ $item->profile_photo }}</td>
+                        <td><img src="{{ asset($item->profile_photo) }}" width="70px" height="70px"></td>
                         <td>
-                            <a href="" title="Edit"></a>
-                            <a href="" title="Delete"></a>
+                            <a href="" class="btn btn-info" title="Edit">Edit Data</a>
+                            <a href="" class="btn btn-danger" title="Delete">Delete Data</a>
                         </td>
                     </tr>
 

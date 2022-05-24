@@ -46,7 +46,7 @@ class ProfileController extends Controller
             'job' => $request->job,
             'description' => $request->description,
             'profile_photo' => $save_url,
-            'created_at' => Carbon::now,
+            'created_at' => Carbon::now(),
         ]);
 
         return redirect()->back();

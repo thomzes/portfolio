@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\ProfileController;
+use App\Http\Controllers\Frontend\IndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,6 +47,10 @@ Route::prefix('profile')->group(function() {
     Route::get('/view/add', [ProfileController::class, 'ProfileViewAdd'])->name('profile.view.add');
     Route::post('/store', [ProfileController::class, 'ProfileStore'])->name('profile.store');
 });
+
+
+// User All Routes
+Route::get('/', [IndexController::class, 'index']);
 
 
 
