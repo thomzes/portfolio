@@ -10,7 +10,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $profiles = Profile::orderBy('id', 'DESC')->get();
+    $profiles = Profile::latest()->get();
 
         return view('frontend.index', compact('profiles'));
 

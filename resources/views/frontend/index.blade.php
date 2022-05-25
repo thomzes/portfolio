@@ -3,10 +3,18 @@
 @section('content')
     
 <!-- Jumbotron -->
-<section class="jumbotron text-center">
-    <img src="{{ asset('frontend/assets/img/profil.jpeg') }}" alt="Thomas Ardiansah" width="200" class="rounded-circle img-thumbnail" />
-    <h1 class="display-4">Thomas</h1>
-    <p class="lead">Student || Freelance</p>
+  <section class="jumbotron text-center">
+
+    @foreach ($profiles as $item)
+        
+    <img src="{{ asset($item->profile_photo) }}" alt="Thomas Ardiansah" width="200" class="rounded-circle img-thumbnail" />
+
+    {{-- name --}}
+    <h1 class="display-4">{{ $item->name }}</h1>
+
+    {{-- Job --}}
+    <p class="lead">{{ $item->status }} || {{ $item->job }}</p>
+      
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path
         fill="#fff"
@@ -26,10 +34,10 @@
         </div>
       </div>
       <div class="row justify-content-center fs-5 text-center">
-        <div class="col-md-4 mb-3">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum alias perferendis, accusamus corporis quae commodi porro numquam, tempora vitae quia, est magnam. Alias magnam quas inventore ipsum reprehenderit doloremque ut?
-        </div>
-        <div class="col-md-4 mb-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime sapiente necessitatibus explicabo debitis dolores illo animi enim voluptates omnis praesentium? Nostrum assumenda eveniet eos neque?</div>
+
+        {{-- Description --}}
+        <div class="col-md-4 mb-3"> {{ $item->description }} </div>
+        
       </div>
     </div>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -39,6 +47,8 @@
         d="M0,224L48,208C96,192,192,160,288,128C384,96,480,64,576,58.7C672,53,768,75,864,112C960,149,1056,203,1152,218.7C1248,235,1344,213,1392,202.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
       ></path>
     </svg>
+
+      @endforeach
   </section>
   <!-- Akhir About -->
 
