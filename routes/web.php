@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\ProfileController;
+use App\Http\Controllers\Backend\ProjectController;
 use App\Http\Controllers\Frontend\IndexController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,12 +17,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::group(['prefix'=> 'admin', 'middleware'=> ['admin:admin']], function() {
-    Route::get('/login', [AdminController::class, 'loginForm']);
+    Route::get('/login', [AdminController::class, 'loginForm'])->name('admin.login.form');
     Route::post('login', [AdminController::class, 'store'])->name('admin.login');
 });
 
@@ -44,10 +41,16 @@ Route::get('/admin/logout', [AdminController::class, 'destroy'])->name('admin.lo
 
 Route::prefix('profile')->group(function() {
     Route::get('/view', [ProfileController::class, 'ProfileView'])->name('profile.view');
-    Route::get('/view/add', [ProfileController::class, 'ProfileViewAdd'])->name('profile.view.add');
+    Route::get('/add', [ProfileController::class, 'ProfileViewAdd'])->name('profile.view.add');
     Route::post('/store', [ProfileController::class, 'ProfileStore'])->name('profile.store');
 });
 
+Route::prefix('project')->group(function() {
+    Route::get('/view', [ProjectController::class, 'ProjectView'])->name('project.view');
+    Route::get('/add', [ProjectController::class, 'ProjectViewAdd'])->name('project.view.add');
+    Route::post('/store', [ProjectController::class, 'ProjectStore'])->name('project.store');
+
+});
 
 // User All Routes
 Route::get('/', [IndexController::class, 'index']);

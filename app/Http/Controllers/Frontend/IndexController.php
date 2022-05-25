@@ -14,7 +14,7 @@ class IndexController extends Controller
 
         return view('frontend.index', compact('profiles'));
 
-    } //end method
+} //end method
 
 
 

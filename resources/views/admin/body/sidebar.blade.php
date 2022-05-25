@@ -28,16 +28,33 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
+
+    {{-- Profile Information --}}
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#profile"
             aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Information</span>
+            <span>Profile Information</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="profile" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ route('profile.view') }}">Profile</a>
                 <a class="collapse-item" href="{{ route('profile.view.add') }}">Add Profile</a>
+            </div>
+        </div>
+    </li>
+
+    {{-- Project Information --}}
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#project"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Project Information</span>
+        </a>
+        <div id="project" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('project.view') }}">All Project</a>
+                <a class="collapse-item" href="{{ route('project.view.add') }}">Add Project</a>
             </div>
         </div>
     </li>
