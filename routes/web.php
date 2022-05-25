@@ -49,7 +49,6 @@ Route::prefix('project')->group(function() {
     Route::get('/view', [ProjectController::class, 'ProjectView'])->name('project.view');
     Route::get('/add', [ProjectController::class, 'ProjectViewAdd'])->name('project.view.add');
     Route::post('/store', [ProjectController::class, 'ProjectStore'])->name('project.store');
-
 });
 
 // User All Routes

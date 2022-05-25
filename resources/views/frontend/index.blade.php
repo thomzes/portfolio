@@ -61,46 +61,21 @@
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <img src="{{ asset('frontend/assets/img/projects/iot.jpg') }}" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+        @foreach ($projects as $item)
+            
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <img src="{{ asset($item->project_photo) }}" class="card-img-top" height="250"/>
+              <div class="card-body">
+                <h4 for="">{{ $item->title }}</h4>
+                <p class="card-text">{{ $item->description }}</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <img src="{{ asset('frontend/assets/img/projects/iot2.jpg') }}" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <img src="{{ asset('frontend/assets/img/projects/iot3.jpg') }}" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <img src="{{ asset('frontend/assets/img/projects/iot4.jpg') }}" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <img src="{{ asset('frontend/assets/img/projects/iot5.jpg') }}" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-        </div>
+
+        @endforeach
+        
       </div>
     </div>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
