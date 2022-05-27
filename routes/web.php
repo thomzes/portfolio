@@ -42,7 +42,9 @@ Route::get('/admin/logout', [AdminController::class, 'destroy'])->name('admin.lo
 Route::prefix('profile')->group(function() {
     Route::get('/view', [ProfileController::class, 'ProfileView'])->name('profile.view');
     Route::get('/add', [ProfileController::class, 'ProfileViewAdd'])->name('profile.view.add');
+    Route::get('/edit/{id}', [ProfileController::class, 'ProfileEdit'])->name('profile.view.edit');
     Route::post('/store', [ProfileController::class, 'ProfileStore'])->name('profile.store');
+    Route::post('/update', [ProfileController::class, 'ProfileUpdate'])->name('profile.update');
 });
 
 Route::prefix('project')->group(function() {

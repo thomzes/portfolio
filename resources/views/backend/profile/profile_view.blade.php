@@ -33,7 +33,7 @@
                         <td>{{ $item->description }}</td>
                         <td><img src="{{ asset($item->profile_photo) }}" width="70px" height="70px"></td>
                         <td>
-                            <a href="" class="btn btn-info" title="Edit">Edit Data</a>
+                            <a href="{{ route('profile.view.edit', $item->id) }}" class="btn btn-info" title="Edit">Edit Data</a>
                             <a href="" class="btn btn-danger" title="Delete">Delete Data</a>
                         </td>
                     </tr>
