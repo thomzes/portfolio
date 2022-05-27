@@ -10,15 +10,15 @@
     <div class="card-body">
         
         <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered-lg" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Status</th>
-                        <th>Job</th>
-                        <th>Description</th>
-                        <th>Image</th>
-                        <th>Action</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Job</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
     

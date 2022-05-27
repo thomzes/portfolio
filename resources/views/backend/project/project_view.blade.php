@@ -10,13 +10,13 @@
     <div class="card-body">
         
         <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered-lg" id="dataTable" width="100%" cellspacing="0" style="table-layout: fixed">
                 <thead>
                     <tr>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Image</th>
-                        <th>Action</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
     
@@ -25,10 +25,10 @@
                     @foreach ($projects as $item)
                             
                     <tr>
-                        <td>1</td>
-                        <td>1</td>
-                        <td><img src="{{ asset($item->profile_photo) }}" width="70px" height="70px"></td>
-                        <td>
+                        <td>{{ $item->title }}</td>
+                        <td>{{ $item->description }}</td>
+                        <td><img src="{{ asset($item->project_photo) }}" width="70px" height="70px"></td>
+                        <td class=>
                             <a href="" class="btn btn-info" title="Edit">Edit Data</a>
                             <a href="" class="btn btn-danger" title="Delete">Delete Data</a>
                         </td>
