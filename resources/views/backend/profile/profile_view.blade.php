@@ -10,7 +10,7 @@
     <div class="card-body">
         
         <div class="table-responsive">
-            <table class="table table-bordered-lg" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered-lg" id="dataTable" width="100%" cellspacing="0" style="table-layout: fixed">
                 <thead>
                     <tr>
                         <th scope="col">Name</th>
@@ -34,7 +34,7 @@
                         <td><img src="{{ asset($item->profile_photo) }}" width="70px" height="70px"></td>
                         <td>
                             <a href="{{ route('profile.view.edit', $item->id) }}" class="btn btn-info" title="Edit">Edit Data</a>
-                            <a href="" class="btn btn-danger" title="Delete">Delete Data</a>
+                            <a href="{{ route('profile.delete', $item->id) }}" class="btn btn-danger" title="Delete">Delete Data</a>
                         </td>
                     </tr>
 

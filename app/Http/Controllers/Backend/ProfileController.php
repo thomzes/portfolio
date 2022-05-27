@@ -50,7 +50,7 @@ class ProfileController extends Controller
             'created_at' => Carbon::now(),
         ]);
 
-        return redirect()->back();
+        return redirect()->route('profile.view');
 
     } //end method
 
@@ -98,6 +98,18 @@ class ProfileController extends Controller
             return redirect()->route('profile.view');
 
         }
+
+    } //end method
+
+    public function ProfileDelete($id)
+    {
+        $profile = Profile::findOrFail($id);
+        $img = $profile->profile_photo;
+        unlink($img);
+
+        Profile::findOrFail($id)->delete();
+
+        return redirect()->back();
 
     } //end method
 
