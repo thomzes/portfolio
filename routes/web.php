@@ -56,6 +56,7 @@ Route::prefix('project')->group(function() {
 
 // User All Routes
 Route::get('/', [IndexController::class, 'index']);
+Route::post('/store', [IndexController::class, 'ContactStore'])->name('contact.store');
 
 
 
