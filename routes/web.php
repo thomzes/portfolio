@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\ProjectController;
 use App\Http\Controllers\Frontend\IndexController;
+use App\Http\Controllers\Backend\MessageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,6 +53,10 @@ Route::prefix('project')->group(function() {
     Route::get('/view', [ProjectController::class, 'ProjectView'])->name('project.view');
     Route::get('/add', [ProjectController::class, 'ProjectViewAdd'])->name('project.view.add');
     Route::post('/store', [ProjectController::class, 'ProjectStore'])->name('project.store');
+});
+
+Route::prefix('message')->group(function() {
+    Route::get('/view', [MessageController::class, 'MessageView'])->name('message.view');
 });
 
 // User All Routes
